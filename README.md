@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/kigster/cmake-project-template.svg?branch=master)](https://travis-ci.org/kigster/cmake-project-template)
+[![Build Status](https://travis-ci.org/sergiorf/xmath.svg?branch=master)](https://travis-ci.org/sergiorf/xmath)
 
-!(doc/pi.svg)
+![XMath C++ library](doc/pi.svg?raw=true "XMath")
 
 # XMath a C++ math library
 
