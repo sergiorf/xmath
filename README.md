@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/sergiorf/xmath.svg?branch=master)](https://travis-ci.org/sergiorf/xmath)
 
-![XMath C++ library](doc/pi.png){:height="2%" width="2%"}
-
+![XMath C++ library](doc/pi.png = 10x10)
 # XMath a C++ math library
 
 ### Division with a remainder library
