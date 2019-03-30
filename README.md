@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/kigster/cmake-project-template.svg?branch=master)](https://travis-ci.org/kigster/cmake-project-template)
 
-# CMake C++ Project Template
+!(doc/pi.svg)
+
+# XMath a C++ math library
 
 ### Division with a remainder library
 

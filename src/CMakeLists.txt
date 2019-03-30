@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.2)
-project(divider)
+project(xmath C CXX)
 
-add_subdirectory(division)
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES
+    xmatrix.h
+    xmatrix.cpp
+)
 
-add_executable(divider ${SOURCE_FILES})
-target_link_libraries(divider division)
-install(TARGETS divider DESTINATION ${DIVISIBLE_INSTALL_BIN_DIR})
+add_library(xmath SHARED STATIC ${SOURCE_FILES})
+
+install(TARGETS xmath DESTINATION ${XMATH_INSTALL_LIB_DIR})
+install(FILES xmatrix.h DESTINATION ${XMATH_INSTALL_INCLUDE_DIR})
