@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/sergiorf/xmath.svg?branch=master)](https://travis-ci.org/sergiorf/xmath)
 
-![XMath C++ library](doc/pi.svg?raw=true "XMath")
+![XMath C++ library](doc/pi.png?raw=true "XMath")
 
 # XMath a C++ math library
 
