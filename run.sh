@@ -45,7 +45,7 @@ divider::lib-bash() {
   run::set-all show-output-off abort-on-error
 }
 
-divider::header() {
+xmath::header() {
   h1::purple "Fractional Division With Remainder: A CMake Project Template with Tests"
   local OIFC=${IFC}
   IFS="|" read -r -a gcc_info <<< "$(gcc --version 2>&1 | tr '\n' '|')"
@@ -55,19 +55,19 @@ divider::header() {
   h1 "${bldylw}CMAKE:  ${bldblu}$(cmake --version | tr '\n' ' ')"
 }
 
-divider::setup() {
+xmath::setup() {
   hl::subtle "Creating Build Folder..."
   run "mkdir -p build/run"
 
   [[ -f .idea/workspace.xml ]] || cp .idea/workspace.xml.example .idea/workspace.xml
 }
 
-divider::clean() {
+xmath::clean() {
   hl::subtle "Cleaning output folders..."
   run 'rm -rf bin/d* include/d* lib/*'
 }
 
-divider::build() {
+xmath::build() {
   run "cd build/run"
   run "cmake ../.. "
   run "make -j 12"
@@ -75,41 +75,33 @@ divider::build() {
   run "cd ${ProjectRoot}"
 }
 
-divider::tests() {
-  if [[ -f bin/divider_tests ]]; then
+xmath::tests() {
+  if [[ -f bin/xmath_tests ]]; then
     run::set-next show-output-on
-    run "echo && bin/divider_tests"
+    run "echo && bin/xmath_tests"
   else
-    printf "${bldred}Can't find installed executable ${bldylw}bin/divider_tests.${clr}\n"
+    printf "${bldred}Can't find installed executable ${bldylw}bin/xmath_tests.${clr}\n"
     exit 2
   fi
 }
 
-divider::examples() {
-  [[ ! -f bin/divider ]] && {
+xmath::examples() {
+  [[ ! -f bin/xmath ]] && {
     error "You don't have the cmpiled binary yet".
     exit 3
   }
 
   run::set-all show-output-on
 
-  hr
-  run "bin/divider 11 7"
-  hr
-  run "bin/divider 1298798375 94759897"
-  hr
-  run "bin/divider 78 17"
-  hr
-
 }
 
 main() {
-  divider::lib-bash
-  divider::header
-  divider::setup
-  divider::build
-  divider::tests
-  divider::examples
+  xmath::lib-bash
+  xmath::header
+  xmath::setup
+  xmath::build
+  xmath::tests
+  xmath::examples
 }
 
 (( $_s_ )) || main
