@@ -79,5 +79,5 @@ script:
   - cmake ../..
   - make install
   - cd ../..
-  - ./bin/divider_tests
-  - ./bin/divider 15 7
+  - ./bin/xmath_tests
+ 
