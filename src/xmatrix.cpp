@@ -27,6 +27,19 @@ XMatrix::~XMatrix()
 	delete[] m_vals;
 }
 
+XMatrix& XMatrix::operator=(const XMatrix &m)
+{
+	if (this != &m) { 
+		if (m_rows != m.m_rows or m_cols != m.m_cols) {
+			throw std::out_of_range("Cannot assign matrix with different dimensions");
+		}
+		for (int i = 0; i < m_rows * m_cols; ++i) {
+			m_vals[i] = m.m_vals[i];
+		}
+	}
+	return *this;
+}
+
 void XMatrix::fillRandom()
 {
 	for (int r = 0; r < m_rows; ++r) {
@@ -63,4 +76,48 @@ void print(const XMatrix& m)
 		std::cout << std::endl;
 	}
 }
+
+XMatrix XMatrix::sum(const XMatrix &m)
+{
+	if (m_rows != m.m_rows or m_cols != m.m_cols) {
+		throw std::invalid_argument("Matrix dimensions do not match at XMatrix::sum");
+	}
+	XMatrix ret(m_rows, m_cols);
+	for (int i = 0; i < m_rows * m_cols; ++i) {
+		ret.m_vals[i] = m_vals[i] + m.m_vals[i];
+	}
+	return ret;
+}
+
+XMatrix XMatrix::operator+(const XMatrix &m)
+{
+	return sum(m);
+}
+
+double& XMatrix::operator()(int r, int c)
+{
+	return at(r, c);
+}
+
+double XMatrix::operator()(int r, int c) const
+{
+	return at(r, c);
+}
+
+std::ostream& operator<<(std::ostream& out, const XMatrix& m)
+{
+	if (out) {
+		out << std::fixed << std::setprecision(1);
+		for (int r = 0; r < m.rows(); ++r) {
+			for (int c = 0; c < m.cols(); ++c) {
+				out << (c > 0 ? " " : "") << std::setw(4);
+				out << m.getValueAt(r, c);
+			}
+			out << std::endl;
+		}
+	}
+	return out;
+}
+
+
 

@@ -27,8 +27,8 @@ First we need to check out the git repo:
 
 ```bash
 $ cd ${insert your workspace folder here}
-$ git clone https://github.com/kigster/cmake-project-template my-project
-$ cd my-project
+$ git clone https://github.com/sergiorf/xmath
+$ cd xmath
 $ git submodule init && git submodule update
 ```
 Now we should be in the project's top level folder. 
@@ -52,9 +52,6 @@ $ cd ../..
 
 # Run the tests:
 $ bin/xmath_tests 
-
-# Run the binary:
-$ bin/divider 234 5431
 ```
 
 ####  Building Using the Script
@@ -63,35 +60,6 @@ There is a handy BASH script (used by the Travis CI) that you can run locally. I
 
 ```bash
 ./run.sh
-```
-
-## Feature Description
-
-To make it easy to branch off from this template, the example is minimal, but it works, compiles and is tested.
-
-We build a static library that, given a simple fraction will return the integer result of the division, and the remainder.
-
-```bash
-$ bin/divider numerator denominator
-
-# eg:
-$ divider 234 5435
-
-Division : 234 / 5435 = 0
-Remainder: 234 % 5435 = 234
-```
-
-And C++ usage:
-
-```C++
-#include <iostream>
-#include <division>
-
-Fraction       f = Fraction{25, 7};
-DivisionResult r = Division(f).divide();
-
-std::cout << "Result of the division is " << r.division;
-std::cout << "Remainder of the division is " << r.remainder;
 ```
 
 ## File Locations
@@ -112,9 +80,9 @@ Tests:
 
 **Pull Requests are WELCOME!** Please submit any fixes or improvements, and I promise to review it as soon as I can at the project URL:
 
- * [Project Github Home](https://github.com/kigster/cmake-project-template)
- * [Submit Issues](https://github.com/kigster/cmake-project-template/issues)
- * [Pull Requests](https://github.com/kigster/cmake-project-template/pulls)
+ * [Project Github Home](https://github.com/sergiorf/xmath)
+ * [Submit Issues](https://github.com/sergiorf/xmath/issues)
+ * [Pull Requests](https://github.com/sergiorf/xmath/pulls)
 
 ### License
 
@@ -124,4 +92,7 @@ Open sourced under MIT license, the terms of which can be read here — [MIT Lic
 
 ### Acknowledgements
 
-This project is a derivative work from a generic C++ project template from Konstantin Gredeskoul at [CMake Tutorial](https://cmake.org/cmake-tutorial/)
+This project is a derivative work from a generic C++ project template designed by Konstantin Gredeskoul at [CMake Project Template](https://github.com/kigster/cmake-project-template)
+
+Thank you!
+

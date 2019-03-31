@@ -7,7 +7,7 @@
 using namespace std;
 
 
-class DividerTest : public ::testing::Test {
+class XMatrixTest : public ::testing::Test {
 
 protected:
 
