@@ -1,6 +1,7 @@
 /*
 * Copyright (C) 2019, Sergio Rodriguez
 */
+
 #include <ostream>
 
 class XMatrix {
