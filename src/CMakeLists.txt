@@ -3,6 +3,7 @@ project(xmath C CXX)
 
 set(SOURCE_FILES
     xmatrix.h
+    xhistogram.h
     xmatrix.cpp
 )
 
